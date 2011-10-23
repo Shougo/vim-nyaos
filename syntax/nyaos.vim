@@ -55,7 +55,7 @@ else
 endif
 
 syntax keyword nyaosKeyword
-      \ alias bindkey cd dirs eval folder foreach end history if ls
+      \ alias bindkey cd dirs eval folder foreach end history if else endif ls
       \ lua_e open option popd pushd pwd set source suffix
       \ unalias unsuffix unoption
 
@@ -63,6 +63,11 @@ syntax keyword nyaosOption
       \ backquote bracexp dots glob ls_colors lnkexp mineditwidth nullcomplete
       \ nyatype history histfilesize prompt savehist term_clear term_cursor_on
       \ tilde uncompletechar width
+
+syntax keyword nyaosSpecialDirectory
+      \ desktop sendto startmenu startup mydocuments favorites
+      \ programs program_files appdata
+      \ allusersdesktop allusersprograms allusersstartmenu allusersstartup
 
 unlet! b:current_syntax
 syn include @nyaosLuaScript syntax/lua.vim
@@ -88,5 +93,6 @@ hi def link nyaosCommand Statement
 hi def link nyaosKeyword Statement
 hi def link nyaosOption Type
 hi def link nyaosDirectory Preproc
+hi def link nyaosSpecialDirectory Preproc
 
 let b:current_syntax = 'nyaos'
