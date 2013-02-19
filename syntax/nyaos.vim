@@ -47,7 +47,7 @@ syn match   nyaosConstants         '[+-]\=\d\+\.\d\+\([eE][+-]\?\d\+\)\?\>' cont
 syn match   nyaosArguments         '\s-\=-[[:alnum:]-]\+=\=' contained
 syn match   nyaosQuoted            '\\.' contained
 syn match   nyaosSpecial           '[|<>;&;]' contained
-if vimshell#iswin()
+if has('win32') || has('win64')
     syn match   nyaosArguments         '\s/[?:,_[:alnum:]]\+\ze\%(\s\|$\)' contained
     syn match   nyaosDirectory         '\%(\f\s\?\)\+[/\\]\ze\%(\s\|$\)'
 else
